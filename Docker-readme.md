@@ -1,25 +1,25 @@
-# Virtualization
+# Microservices
+
+![docker architecture](./assets/images/docker-architecture.png)
 
 ## Table of Contents
 
-- [Virtualization](#virtualization)
+- [Microservices](#microservices)
   - [Table of Contents](#table-of-contents)
   - [Micro Services Architecture](#micro-services-architecture)
   - [Tools](#tools)
   - [What is Docker](#what-is-docker)
   - [Docker setup](#docker-setup)
   - [Useful COmmands](#useful-commands)
-  - [Docker APIs](#docker-apis)
-  - [Docker Images](#docker-images)
   - [Benefits of Docker](#benefits-of-docker)
-  - [Differences between Docker and Virtualization](#differences-between-docker-and-virtualization)
-  - [Monolith vs Micro-services](#monolith-vs-micro-services)
 
 ## Micro Services Architecture
 
 ## Tools
 
 ## What is Docker
+
+Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
 
 ## Docker setup
 
@@ -41,12 +41,12 @@ In case we encounter the **TTY** do `alias docker="winpty docker"`
 - `docker ps` shows running containers. Adding `-a` flag displays all containers used.
 - `docker run -d -p <destination-PORT>:<initial-PORT> <image-name>` runs a container. `-d` runs it in background and gives us back the terminal.
 
-## Docker APIs
-
-## Docker Images
-
 ## Benefits of Docker
 
-## Differences between Docker and Virtualization
-
-## Monolith vs Micro-services
+- Consistent and Isolated Environment
+- Cost-Effectiveness with Fast Deployment
+- Mobility - Ability to run Anywhere
+- Repeatability and Automation
+- Test, Roll Back and Deploy
+- Flexibility
+- Collaboration, Modularity and Scaling
