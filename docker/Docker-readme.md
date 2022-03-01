@@ -12,6 +12,7 @@
   - [Docker setup](#docker-setup)
   - [Useful COmmands](#useful-commands)
   - [Benefits of Docker](#benefits-of-docker)
+  - [Hosting static website with Nginx and Docker](#hosting-static-website-with-nginx-and-docker)
 
 ## Micro Services Architecture
 
@@ -40,6 +41,9 @@ In case we encounter the **TTY** do `alias docker="winpty docker"`
 - `docker rmi <image-name> -f`: removes the image by name/id. The `-f` forces it
 - `docker ps` shows running containers. Adding `-a` flag displays all containers used.
 - `docker run -d -p <destination-PORT>:<initial-PORT> <image-name>` runs a container. `-d` runs it in background and gives us back the terminal.
+- `docker exec -it <container-id> sh` to enter a container. You should see a `#` sign at the beginning of the line if it was successful. You can check using `uname -a`.
+- `docker commit <image-id> <username>/<repo-name>:<tag-name>` to commit a new version to DockerHub. **You have to first create the repo on DockerHub**.
+- `docker push <username>/<repo-name>:<tag-name>` to push the version from your local machine to DockerHub
 
 ## Benefits of Docker
 
@@ -50,3 +54,7 @@ In case we encounter the **TTY** do `alias docker="winpty docker"`
 - Test, Roll Back and Deploy
 - Flexibility
 - Collaboration, Modularity and Scaling
+
+## Hosting static website with Nginx and Docker
+
+- Copy index.html from localhost to default location of nginx (`/usr/share/nginx/html/`)
