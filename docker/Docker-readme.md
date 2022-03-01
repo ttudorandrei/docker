@@ -44,6 +44,7 @@ In case we encounter the **TTY** do `alias docker="winpty docker"`
 - `docker exec -it <container-id> sh` to enter a container. You should see a `#` sign at the beginning of the line if it was successful. You can check using `uname -a`.
 - `docker commit <image-id> <username>/<repo-name>:<tag-name>` to commit a new version to DockerHub. **You have to first create the repo on DockerHub**.
 - `docker push <username>/<repo-name>:<tag-name>` to push the version from your local machine to DockerHub
+- `docker build -t <username>/<repo-name>`
 
 ## Benefits of Docker
 
