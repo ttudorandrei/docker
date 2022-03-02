@@ -77,4 +77,4 @@ root --- app --- app files
 
 ## Run docker compose
 
-- `docker-compose -f docker-compose.yml up` (from you root folder) to run the docker-compose file
+- `docker-compose -f docker-compose.yml up --detach` (from you root folder) to run the docker-compose file. The `--detach` flag runs the container in the background.
