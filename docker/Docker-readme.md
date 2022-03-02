@@ -13,6 +13,8 @@
   - [Useful COmmands](#useful-commands)
   - [Benefits of Docker](#benefits-of-docker)
   - [Hosting static website with Nginx and Docker](#hosting-static-website-with-nginx-and-docker)
+  - [Docker compose folder structure](#docker-compose-folder-structure)
+  - [Run docker compose](#run-docker-compose)
 
 ## Micro Services Architecture
 
@@ -44,7 +46,8 @@ In case we encounter the **TTY** do `alias docker="winpty docker"`
 - `docker exec -it <container-id> sh` to enter a container. You should see a `#` sign at the beginning of the line if it was successful. You can check using `uname -a`.
 - `docker commit <image-id> <username>/<repo-name>:<tag-name>` to commit a new version to DockerHub. **You have to first create the repo on DockerHub**.
 - `docker push <username>/<repo-name>:<tag-name>` to push the version from your local machine to DockerHub
-- `docker build -t <username>/<repo-name>`
+- `docker build -t <username>/<repo-name> .`
+- `docker cp <container-name>:<origin-path> <destination-path>` to copy files from docker container to localhost
 
 ## Benefits of Docker
 
@@ -59,3 +62,19 @@ In case we encounter the **TTY** do `alias docker="winpty docker"`
 ## Hosting static website with Nginx and Docker
 
 - Copy index.html from localhost to default location of nginx (`/usr/share/nginx/html/`)
+
+## Docker compose folder structure
+
+```bash
+root --- app --- app files
+        |       |
+        |        Dockerfile
+        |
+         mongod.conf
+        |
+         docker-compose.yml
+```
+
+## Run docker compose
+
+- `docker-compose -f docker-compose.yml up` (from you root folder) to run the docker-compose file
