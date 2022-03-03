@@ -1,0 +1,33 @@
+# k8 is a yml file
+# we are going to create a deployment for our nginx-image
+# we will create 3 pods with this deployment
+# kubectl get name-service - deploy/deployment - service/svc - pods
+# kubectl create -f file.yml
+# kubectl delete name-service deploy deploy-name
+
+apiVersion: apps/v1
+
+kind: Deployment # pod, service # replicaset # ASG
+
+# metadata to name your deployment - case insensitive
+metadata: 
+  name: node
+spec:
+# labels and selectors are the communication channels between micro-services
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers: 
+        - name: nginx
+          image: tudortocan/nginx # nginx image
+
+          ports:
+            - containerPort: 80
+
+          imagePullPolicy: Never
